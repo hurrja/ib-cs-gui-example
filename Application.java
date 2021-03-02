@@ -1,5 +1,3 @@
-import javax.swing.Runnable;
-
 public class Application implements Runnable
 {
   public void run ()
