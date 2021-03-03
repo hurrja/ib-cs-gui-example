@@ -13,9 +13,9 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-public class Application implements Runnable
+public class Application
 {
-  public void run ()
+  public void initialize ()
   {
     new GUI (this);
     state = false;
