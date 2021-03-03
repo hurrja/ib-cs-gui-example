@@ -13,21 +13,34 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+import javax.swing.Timer;
+import java.awt.event.ActionEvent;
+
 public class Application
 {
+  // this method is run at the start of the program
   public void initialize ()
   {
-    new GUI (this);
+    gui = new GUI (this);
     state = false;
+
+    // create and start a timer: timers can be used to perform
+    // functions without user-initiated events; the given lambda
+    // expression is run every 1000 ms
+    timer = new Timer (1000, (ActionEvent e) -> gui.showTime ());
+    timer.start ();
   }
 
-  public boolean flipState ()
+  // the "state" of this simple application is just a boolean, and
+  // this method will change the state by flipping the value
+  public void flipState ()
   {
     state = !state;
-    return state;
   }
 
   public boolean getState () { return state; }
-
+  
+  private GUI gui;
   private boolean state;
+  private Timer timer;
 }

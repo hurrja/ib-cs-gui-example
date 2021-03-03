@@ -24,6 +24,7 @@ import java.time.LocalTime;
 
 public class GUI extends JFrame
 {
+  // constructor will create all GUI components and set their properties
   public GUI (Application application)
   {
     super ("A simple GUI demo");
@@ -46,8 +47,6 @@ public class GUI extends JFrame
     timeLabel = new JLabel ();
     showTime ();
     add (timeLabel);
-    timer = new Timer (1000, (ActionEvent e) -> showTime ());
-    timer.start ();
 
     // a label for showing the boolean state of the program
     stateLabel = new JLabel ();
@@ -62,20 +61,28 @@ public class GUI extends JFrame
     setVisible (true); // show frame
   }
 
+  // a method which shows the state 
   private void showState ()
   {
     stateLabel.setText (String.valueOf (application.getState ()));
   }
 
-  private void showTime ()
+  public void showTime ()
   {
     LocalTime now = LocalTime.now ();
-    timeLabel.setText (now.getHour () + ":" + now.getMinute () + ":" + now.getSecond ());
+    int hours = now.getHour (), minutes = now.getMinute (), seconds = now.getSecond ();
+    timeLabel.setText (formatInt (hours) + ":" + formatInt (minutes) + ":" + formatInt (seconds));
   }
 
+  // format an int as a string so that the minimum length is 2
+  // characters, zero-padded if needed
+  private String formatInt (int i)
+  {
+    return String.format ("%02d", i);
+  }
+  
   private Application application;
   private JMenuBar menuBar;
   private JLabel stateLabel, timeLabel;
   private JButton flipButton;
-  private Timer timer;
 }

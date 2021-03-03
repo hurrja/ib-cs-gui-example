@@ -2,18 +2,22 @@
 ** The purpose of this repository
    This repository contains an example of a simple GUI with
    - one frame
-   - menu bar
+   - menu bar with one item to quit the program
    - label with current time
    - label with boolean state of the application program
    - button.
 
-   The purpose is to show a clean separation of the application from
-   the user interface (as in Model-View-Controller). Start by taking a
-   look at classes =Main= and =Application=, especially how simple
-   they are.
-
-   The program utilizes the simplicity of lambda expressions for event
-   handling.
+   This example serves three purposes:
+   1. To show a clean separation of the application from the user
+      interface (as in Model-View-Controller). Start by taking a look
+      at classes =Main= and =Application=, especially how simple they
+      are.
+   2. To demonstrate how lambda expressions greatly simplify code
+      where functional interfaces have been used in the past. See, for
+      example, =main()= in class =Main= and the constructor of class
+      =GUI=.
+   3. To demonstrate how a timer can be used to run methods without
+      user invocation. See class =Application=.
 
 ** Installation in IDEA
    To install the application in IDEA, do the following:
