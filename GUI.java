@@ -31,7 +31,7 @@ public class GUI extends JFrame
     this.application = application;
 
     // frame properties
-    setSize (800, 600);
+    setSize (400, 300);
     setLayout (new FlowLayout ());
 
     // menu bar with one item for quitting the program
