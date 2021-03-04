@@ -37,9 +37,10 @@ public class GUI extends JFrame
     // menu bar with one item for quitting the program
     menuBar = new JMenuBar ();
     JMenu fileMenu = new JMenu ("File");
-    JMenuItem quitMenuItem = new JMenuItem ("Quit");
-    quitMenuItem.addActionListener ((ActionEvent e) -> System.exit (0));
-    fileMenu.add (quitMenuItem);
+    JMenuItem quitItem = new JMenuItem ("Quit");
+    quitItem.addActionListener ((ActionEvent e) ->
+                                System.exit (0));
+    fileMenu.add (quitItem);
     menuBar.add (fileMenu);
     setJMenuBar (menuBar);
 
@@ -55,7 +56,11 @@ public class GUI extends JFrame
 
     // a button for flipping program state
     flipButton = new JButton ("Flip");
-    flipButton.addActionListener ((ActionEvent e) -> { application.flipState (); showState (); });
+    flipButton.addActionListener ((ActionEvent e) ->
+                                  {
+                                    application.flipState ();
+                                    showState ();
+                                  });
     add (flipButton);
 
     setVisible (true); // show frame

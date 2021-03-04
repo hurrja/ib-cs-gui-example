@@ -21,8 +21,10 @@ public class Main
   {
     Application application = new Application ();
 
-    // use a lambda expression to define a method invoked later (by
-    // event dispatcher)
-    SwingUtilities.invokeLater (() -> application.initialize ());
+    // use a lambda expression to define a method invoked
+    // later (by event dispatcher)
+    SwingUtilities.invokeLater (
+      () -> application.initialize ()
+      );
   }
 }
