@@ -18,8 +18,8 @@ import java.awt.event.ActionEvent;
 
 public class Application
 {
-  // this method is run at the start of the program
-  public void initialize ()
+  // constructor is run at the start of the program
+  public Application ()
   {
     gui = new GUI (this);
     state = false;

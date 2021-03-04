@@ -19,12 +19,8 @@ public class Main
 {
   public static void main (String[] args)
   {
-    Application application = new Application ();
-
     // use a lambda expression to define a method invoked
     // later (by event dispatcher)
-    SwingUtilities.invokeLater (
-      () -> application.initialize ()
-      );
+    SwingUtilities.invokeLater (() -> new Application ());
   }
 }
