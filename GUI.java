@@ -44,7 +44,7 @@ public class GUI extends JFrame
     menuBar.add (fileMenu);
     setJMenuBar (menuBar);
 
-    // a label to show time as string, and timer for updating string
+    // a label to show time as string
     timeLabel = new JLabel ();
     add (timeLabel);
 
@@ -61,6 +61,7 @@ public class GUI extends JFrame
                                     showState ();
                                   });
     add (flipButton);
+
     // progress bar tracking elapsed time
     progressBar = new JProgressBar (0, TMAX);
     add (progressBar);
