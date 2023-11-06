@@ -6,7 +6,7 @@
    - label with current time
    - label with boolean state of the application program
    - button
-   - progress bar counting to approx. 30 seconds repetitively.
+   - progress bar counting to 30 seconds repetitively.
 
    This example serves three purposes:
    1. To show a clean separation of the application from the user

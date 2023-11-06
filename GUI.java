@@ -79,7 +79,7 @@ public class GUI extends JFrame
   public void updateAndShowTime ()
   {
     secs++;
-    secs %= TMAX;
+    secs %= (TMAX + 1);
     showTime ();
   }
   
