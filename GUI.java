@@ -46,7 +46,6 @@ public class GUI extends JFrame
 
     // a label to show time as string, and timer for updating string
     timeLabel = new JLabel ();
-    showTime ();
     add (timeLabel);
 
     // a label for showing the boolean state of the program
@@ -62,6 +61,10 @@ public class GUI extends JFrame
                                     showState ();
                                   });
     add (flipButton);
+    // progress bar tracking elapsed time
+    progressBar = new JProgressBar (0, TMAX);
+    add (progressBar);
+    showTime ();
 
     setVisible (true); // show frame
   }
@@ -72,11 +75,19 @@ public class GUI extends JFrame
     stateLabel.setText (String.valueOf (application.getState ()));
   }
 
-  public void showTime ()
+  public void updateAndShowTime ()
+  {
+    secs++;
+    secs %= TMAX;
+    showTime ();
+  }
+  
+  private void showTime ()
   {
     LocalTime now = LocalTime.now ();
     int hours = now.getHour (), minutes = now.getMinute (), seconds = now.getSecond ();
     timeLabel.setText (formatInt (hours) + ":" + formatInt (minutes) + ":" + formatInt (seconds));
+    progressBar.setValue (secs);
   }
 
   // format an int as a string so that the minimum length is 2
@@ -90,4 +101,7 @@ public class GUI extends JFrame
   private JMenuBar menuBar;
   private JLabel stateLabel, timeLabel;
   private JButton flipButton;
+  private JProgressBar progressBar;
+  private final int TMAX = 30;
+  private int secs = 0;
 }

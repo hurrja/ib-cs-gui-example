@@ -27,7 +27,7 @@ public class Application
     // create and start a timer: timers can be used to perform
     // functions without user-initiated events; the given lambda
     // expression is run every 1000 ms
-    timer = new Timer (1000, (ActionEvent e) -> gui.showTime ());
+    timer = new Timer (1000, (ActionEvent e) -> gui.updateAndShowTime ());
     timer.start ();
   }
 
