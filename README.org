@@ -16,10 +16,13 @@
    2. To demonstrate how a timer can be used to run methods without
       user invocation. See class =Application=.
 
-** Installation in VS code
-   To install the application in VS code, do the following:
+** Installing and runnin application in VS code
+   To install and run the application in VS code, do the following:
    1. Clone the repository.
-   2. TODO
+   2. Create a new =venv=.
+      1. In the list of dependencies to install, select =requirements.txt=.
+   3. Open =main.py=.
+   4. Run Python file.
 ** License
    Copyright (C) 2021-2025 Jarmo Hurri
 
