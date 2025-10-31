@@ -1,5 +1,6 @@
 from PySide6.QtWidgets import QMainWindow, QHBoxLayout, QWidget, QLabel, QPushButton, QProgressBar
 from PySide6.QtGui import QAction
+from PySide6.QtCore import Slot
 import time
 
 class GUI(QMainWindow):
@@ -45,6 +46,7 @@ class GUI(QMainWindow):
         self.show()
 
     # update counter and show time and counter status
+    @Slot()
     def update_and_show_time(self):
         self.counter += 1
         self.counter %= self.COUNTER_MAX
@@ -55,6 +57,7 @@ class GUI(QMainWindow):
         self.state_label.setText(f'{self.application.get_state()}')
 
     # flip the state of the app
+    @Slot()
     def _flip_state(self):
         self.application.flip_state()
         self._show_state()

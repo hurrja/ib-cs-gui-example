@@ -1,5 +1,5 @@
 from PySide6.QtWidgets import QWidget
-from PySide6.QtCore import QTimer
+from PySide6.QtCore import QTimer, Slot
 
 import GUI
 import sys
@@ -17,6 +17,7 @@ class Application:
         self.timer.timeout.connect(self.gui.update_and_show_time)
         self.timer.start()
 
+    @Slot()
     def quit(self):
         sys.exit()
 
